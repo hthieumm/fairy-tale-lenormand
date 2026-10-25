@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  
+  --color-emerald-dark: #143820;
+  --color-emerald-primary: #1E4D2B;
+  --color-emerald-light: #2D6A4F;
+  --color-emerald-soft: #E8F2EC;
+  
+  --color-gold-dark: #9A7410;
+  --color-gold-primary: #D4AF37;
+  --color-gold-light: #F4E7B2;
+  --color-gold-soft: #FFFDF0;
+
+  --color-text-main: #1A231E;
+  --color-text-muted: #4A5850;
+  --color-text-light: #6E7E75;
+  
+  --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+  --shadow-soft: 0 4px 20px rgba(30, 77, 43, 0.08);
+  --shadow-hover: 0 10px 30px rgba(30, 77, 43, 0.15);
+  --shadow-gold: 0 0 15px rgba(212, 175, 55, 0.25);
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: radial-gradient(var(--color-emerald-soft) 1px, transparent 1px), radial-gradient(var(--color-gold-light) 1px, var(--bg-main) 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EDE8;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-emerald-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-emerald-primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* 3D Continuous Card Spin & Cosmic Animations */
+@keyframes continuousRotate {
+  0% {
+    transform: rotateY(0deg) rotateX(4deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(4deg);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
